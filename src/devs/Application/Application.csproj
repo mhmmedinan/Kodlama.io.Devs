@@ -7,7 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Auths\Contants\" />
+    <Folder Include="Features\Auths\Models\" />
+    <Folder Include="Features\Auths\Queries\" />
+    <Folder Include="Features\Auths\Profiles\" />
+    <Folder Include="Features\GithubAddresses\Contants\" />
+    <Folder Include="Features\GithubAddresses\Rules\" />
     <Folder Include="Features\ProgrammingLanguages\Contants\" />
+    <Folder Include="Features\Technologies\Contants\" />
   </ItemGroup>
 
   <ItemGroup>
