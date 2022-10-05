@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.OperationClaims.Constants
+namespace Application.Features.UserOperationClaims.Constants
 {
-    public static class OperationClaims
+    public class UserOperationClaims
     {
         public static string Add = "Add";
         public static string Delete = "Delete";
         public static string Update = "Update";
-      
+        
     }
 }

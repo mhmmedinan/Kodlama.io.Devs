@@ -16,20 +16,20 @@ namespace Application.Features.OperationClaims.Commands.DeleteOperationClaim
     {
         private readonly IOperationClaimRepository _operationClaimRepository;
         private readonly IMapper _mapper;
-        private readonly OperationClaimBusinessRules _operationClaimBusinessRules;
+      
 
-        public DeleteOperationClaimCommandHandler(IOperationClaimRepository operationClaimRepository, IMapper mapper, OperationClaimBusinessRules operationClaimBusinessRules)
+        public DeleteOperationClaimCommandHandler(IOperationClaimRepository operationClaimRepository, IMapper mapper)
         {
             _operationClaimRepository = operationClaimRepository;
             _mapper = mapper;
-            _operationClaimBusinessRules = operationClaimBusinessRules;
+           
         }
 
         public async Task<DeletedOperationClaimDto> Handle(DeleteOperationClaimCommand request, CancellationToken cancellationToken)
         {
-            await _operationClaimBusinessRules.OperationClaimShouldExists(request.Id);
-            OperationClaim mappedOperationClaim = _mapper.Map<OperationClaim>(request);
-            OperationClaim deleteOperationClaim = await _operationClaimRepository.DeleteAsync(mappedOperationClaim);
+
+            OperationClaim operationClaim = await _operationClaimRepository.GetAsync(x=>x.Id==request.Id);
+            OperationClaim deleteOperationClaim = await _operationClaimRepository.DeleteAsync(operationClaim);
             DeletedOperationClaimDto deletedOperationClaimDto = _mapper.Map<DeletedOperationClaimDto>(deleteOperationClaim);
             return deletedOperationClaimDto;
            
