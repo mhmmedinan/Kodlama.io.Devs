@@ -12,5 +12,6 @@ namespace Application.Features.UserOperationClaims.Queries.GetListUserOperationC
     public class GetListUserOperationClaimQuery:IRequest<UserOperationClaimListModel>
     {
         public PageRequest PageRequest { get; set; }
+        
     }
 }

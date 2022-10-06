@@ -4,6 +4,7 @@ using Application.Features.UserOperationClaims.Commands.UpdateUserOperationClaim
 using Application.Features.UserOperationClaims.Dtos;
 using Application.Features.UserOperationClaims.Models;
 using Application.Features.UserOperationClaims.Queries.GetByIdUserOperationClaim;
+using Application.Features.UserOperationClaims.Queries.GetByUserIdUserOperationClaim;
 using Application.Features.UserOperationClaims.Queries.GetListUserOperationClaim;
 using Core.Application.Requests;
 using Microsoft.AspNetCore.Http;
@@ -44,10 +45,18 @@ namespace WebAPI.Controllers
             return Ok(result);
         }
 
+        [HttpGet("GetByUserId")]
+        public async Task<IActionResult> GetByUserId([FromQuery] PageRequest pageRequest, [FromQuery] int userId )
+        {
+            GetByUserIdUserOperationClaimQuery getByUserIdUserOperationClaimQuery = new() { PageRequest = pageRequest,UserId=userId };
+            UserOperationClaimListModel result = await Mediator.Send(getByUserIdUserOperationClaimQuery);
+            return Ok(result);
+        }
+
         [HttpGet("GetList")]
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
-            GetListUserOperationClaimQuery getListUserOperationClaimQuery = new() { PageRequest = pageRequest };
+            GetListUserOperationClaimQuery getListUserOperationClaimQuery = new() { PageRequest = pageRequest};
             UserOperationClaimListModel result = await Mediator.Send(getListUserOperationClaimQuery);
             return Ok(result);
         }

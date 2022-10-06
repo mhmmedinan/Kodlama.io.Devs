@@ -93,6 +93,7 @@ namespace Persistence.Contexts
                 p.Property(p => p.PasswordHash).HasColumnName("PasswordHash");
                 p.Property(p => p.Status).HasColumnName("Status");
                 p.Property(p => p.AuthenticatorType).HasColumnName("AuthenticatorType");
+                p.HasMany(p => p.UserOperationClaims);
             });
 
             modelBuilder.Entity<UserOperationClaim>(p =>
