@@ -11,7 +11,6 @@
     <Folder Include="Features\Auths\Models\" />
     <Folder Include="Features\Auths\Queries\" />
     <Folder Include="Features\Auths\Profiles\" />
-    <Folder Include="Features\GithubAddresses\Contants\" />
     <Folder Include="Features\GithubAddresses\Rules\" />
     <Folder Include="Features\ProgrammingLanguages\Contants\" />
     <Folder Include="Features\Technologies\Contants\" />
@@ -19,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
-    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR" Version="11.0.0" />
 	 <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />

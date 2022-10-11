@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Application.Features.UserOperationClaims.Constants.UserOperationClaims;
+using static Application.Features.UserOperationClaims.Constants.OperationClaims;
 using static Domain.Constants.OperationClaims;
 
 
@@ -15,6 +15,6 @@ namespace Application.Features.UserOperationClaims.Commands.DeleteUserOperationC
     public class DeleteUserOperationClaimCommand : IRequest<DeletedUserOperationClaimDto>, ISecuredRequest
     {
         public int Id { get; set; }
-        public string[] Roles => new[] { Admin, Delete };
+        public string[] Roles => new[] { Admin, OperationClaimDelete };
     }
 }

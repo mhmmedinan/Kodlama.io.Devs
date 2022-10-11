@@ -4,6 +4,8 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 
+
+
 namespace Core.Application.Pipelines.Authorization;
 
 public class AuthorizationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
@@ -16,8 +18,9 @@ public class AuthorizationBehavior<TRequest, TResponse> : IPipelineBehavior<TReq
         _httpContextAccessor = httpContextAccessor;
     }
 
-    public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
-                                        RequestHandlerDelegate<TResponse> next)
+    
+
+    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         List<string>? roleClaims = _httpContextAccessor.HttpContext.User.ClaimRoles();
 

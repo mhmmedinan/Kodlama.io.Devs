@@ -8,7 +8,7 @@ namespace Domain.Constants
 {
     public static class OperationClaims
     {
-        public static string Admin = "admin";
-        public static string Moderator = "moderator";
+        public const string Admin = "Admin";
+        public const string Moderator = "moderator";
     }
 }

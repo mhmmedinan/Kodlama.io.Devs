@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Application.Features.UserOperationClaims.Constants.UserOperationClaims;
+using static Application.Features.UserOperationClaims.Constants.OperationClaims;
 using static Domain.Constants.OperationClaims;
 
 namespace Application.Features.UserOperationClaims.Commands.CreateUserOperationClaim
@@ -16,6 +16,6 @@ namespace Application.Features.UserOperationClaims.Commands.CreateUserOperationC
         public int UserId { get; set; }
         public int OperationClaimId { get; set; }
 
-        public string[] Roles => new[] { Admin, Add };
+        public string[] Roles => new[] { Admin, OperationClaimAdd };
     }
 }

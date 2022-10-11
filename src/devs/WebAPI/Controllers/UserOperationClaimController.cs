@@ -54,9 +54,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("GetList")]
-        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
+        public async Task<IActionResult> GetList([FromQuery] GetListUserOperationClaimQuery getListUserOperationClaimQuery)
         {
-            GetListUserOperationClaimQuery getListUserOperationClaimQuery = new() { PageRequest = pageRequest};
+            
             UserOperationClaimListModel result = await Mediator.Send(getListUserOperationClaimQuery);
             return Ok(result);
         }
